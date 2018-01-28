@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>dnx451;dnxcore50</TargetFrameworks>
+    <AssemblyName>ShapingAPI</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <PackageId>ShapingAPI</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\**\*;node_modules" />
+    <EmbeddedResource Remove="wwwroot\**\*;node_modules" />
+    <None Update="**.user;**.vspscc">
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNet" Version="1.0.0-rc1" />
+    <PackageReference Include="Microsoft.AspNet.IISPlatformHandler" Version="1.0.0-rc1-final" />
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="6.0.0-rc1-final" />
+    <PackageReference Include="Microsoft.AspNet.Server.Kestrel" Version="1.0.0-rc1-final" />
+    <PackageReference Include="Microsoft.AspNet.StaticFiles" Version="1.0.0-rc1-final" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileProviderExtensions" Version="1.0.0-rc1-final" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="1.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="1.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.0.2" />
+    <PackageReference Include="EntityFramework.MicrosoftSqlServer" Version="7.0.0-rc1-final" />
+    <PackageReference Include="EntityFramework.MicrosoftSqlServer.Design" Version="7.0.0-rc1-final" />
+    <PackageReference Include="EntityFramework.Commands" Version="7.0.0-rc1-final" />
+    <PackageReference Include="AutoMapper.Data" Version="1.0.0-beta1" />
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'dnx451' ">
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+</Project>
